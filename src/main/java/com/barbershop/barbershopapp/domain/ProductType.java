@@ -4,15 +4,21 @@ import lombok.Getter;
 
 @Getter
 public enum ProductType {
-    CABELO("Cabelo", 10.0),
-    BARBA("Barba", 15.0),
-    CABELO_E_BARBA("Cabelo + Barba", 22.0);
+    CORTE_CABELO("Corte de Cabelo", 35.0),
+    BARBA("Barba", 25.0),
+    BARBOTERAPIA("Barboterapia", 35.0),
+    PEZINHO("Pezinho", 15.0),
+    PERSONALIZADO("Serviço Personalizado", 0.0); // O preço será calculado dinamicamente
 
     private final String name;
-    private final double price;
+    private double price; // Preço editável
 
     ProductType(String name, double price) {
         this.name = name;
+        this.price = price;
+    }
+
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -30,5 +36,4 @@ public enum ProductType {
         }
     }
 }
-
 
