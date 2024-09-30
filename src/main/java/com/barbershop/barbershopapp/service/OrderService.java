@@ -1,12 +1,14 @@
-package com.barbershop.barbershopapp.service;
+package com.trimtime.app.service;
 
-import com.barbershop.barbershopapp.domain.Order;
-import com.barbershop.barbershopapp.domain.Product;
-import com.barbershop.barbershopapp.domain.User;
-import com.barbershop.barbershopapp.repository.OrderRepository;
-import com.barbershop.barbershopapp.repository.UserRepository;
+import com.trimtime.app.domain.Order;
+import com.trimtime.app.domain.Product;
+import com.trimtime.app.domain.User;
+import com.trimtime.app.repository.OrderRepository;
+import com.trimtime.app.repository.UserRepository;
 import org.bson.types.ObjectId;
 import org.springframework.stereotype.Service;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
