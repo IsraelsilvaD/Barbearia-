@@ -1,4 +1,4 @@
-package com.barbershop.barbershopapp;
+package com.trimtime.app;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
