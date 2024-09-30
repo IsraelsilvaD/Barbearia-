@@ -1,13 +1,13 @@
-package com.barbershop.barbershopapp;
+package com.trimtime.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BarbershopappApplication {
+public class TrimTimeApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BarbershopappApplication.class, args);
+		SpringApplication.run(TrimTimeApplication.class, args);
 	}
 
 }
