@@ -1,6 +1,6 @@
-package com.barbershop.barbershopapp.repository;
+package com.trimtime.app.repository;
 
-import com.barbershop.barbershopapp.domain.User;
+import com.trimtime.app.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
