@@ -1,6 +1,6 @@
-package com.barbershop.barbershopapp;
+package com.trimtime.app;
 
-import com.barbershop.barbershopapp.util.JwtRequestFilter;
+import com.trimtime.app.util.JwtRequestFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
