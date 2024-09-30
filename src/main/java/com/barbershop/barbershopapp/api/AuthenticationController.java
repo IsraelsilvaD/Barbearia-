@@ -1,8 +1,8 @@
-package com.barbershop.barbershopapp.api;
+package com.trimtime.app.api;
 
-import com.barbershop.barbershopapp.domain.JwtResponse;
-import com.barbershop.barbershopapp.domain.LoginRequest;
-import com.barbershop.barbershopapp.service.AuthenticationService;
+import com.trimtime.app.domain.JwtResponse;
+import com.trimtime.app.domain.LoginRequest;
+import com.trimtime.app.service.AuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
