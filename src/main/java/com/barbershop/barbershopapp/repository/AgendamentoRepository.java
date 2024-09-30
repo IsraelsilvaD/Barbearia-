@@ -1,6 +1,6 @@
-package com.barbershop.barbershopapp.repository;
+package com.trimtime.app.repository;
 
-import com.barbershop.barbershopapp.domain.Agendamento;
+import com.trimtime.app.domain.Agendamento;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.time.LocalDateTime;
