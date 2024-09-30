@@ -1,4 +1,4 @@
-package com.barbershop.barbershopapp.util;
+package com.trimtime.app.util;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
