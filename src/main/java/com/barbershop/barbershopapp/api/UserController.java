@@ -1,7 +1,7 @@
-package com.barbershop.barbershopapp.api;
+package com.trimtime.app.api;
 
-import com.barbershop.barbershopapp.domain.User;
-import com.barbershop.barbershopapp.service.UserService;
+import com.trimtime.app.domain.User;
+import com.trimtime.app.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
