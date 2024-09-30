@@ -1,4 +1,4 @@
-package com.barbershop.barbershopapp.domain;
+package com.trimtime.app.domain;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
