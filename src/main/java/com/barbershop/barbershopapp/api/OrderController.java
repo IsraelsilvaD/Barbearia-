@@ -1,13 +1,14 @@
-package com.barbershop.barbershopapp.api;
+package com.trimtime.app.api;
 
-import com.barbershop.barbershopapp.domain.CreateOrderRequest;
-import com.barbershop.barbershopapp.domain.Order;
-import com.barbershop.barbershopapp.domain.User;
-import com.barbershop.barbershopapp.service.OrderService;
-import com.barbershop.barbershopapp.domain.Product;
+import com.timtime.app.domain.CreateOrderRequest;
+import com.trimtime.app.domain.Order;
+import com.trimtime.app.domain.User;
+import com.trimtime.app.service.OrderService;
+import com.trimtime.app.domain.Product;
 import org.bson.types.ObjectId;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -37,6 +38,7 @@ public class OrderController {
     }
 
     // 2. Get all orders
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping
     public ResponseEntity<List<Order>> getAllOrders() {
         List<Order> orders = orderService.getAllOrders();
@@ -58,20 +60,6 @@ public class OrderController {
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    // 4. Update an existing order
-   /* @PutMapping("/{id}")
-    public ResponseEntity<Order> updateOrder(@PathVariable String id, @RequestBody List<Product> products) {
-        Optional<Order> existingOrder = orderService.getOrderById(id);
-        if (existingOrder.isPresent()) {
-            Order updatedOrder = existingOrder.get();
-            updatedOrder.setProducts(products);  // Update products and total price will be recalculated
-            orderService.createOrder(products);  // Save the updated order
-            return new ResponseEntity<>(updatedOrder, HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
-*/
     // 5. Delete an order by ID
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteOrder(@PathVariable ObjectId id) {
