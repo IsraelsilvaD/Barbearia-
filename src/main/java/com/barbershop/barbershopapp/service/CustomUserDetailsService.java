@@ -1,14 +1,17 @@
-package com.barbershop.barbershopapp.service;
+package com.trimtime.app.service;
 
-import com.barbershop.barbershopapp.domain.User;
-import com.barbershop.barbershopapp.repository.UserRepository;
+import com.trimtime.app.domain.User;
+import com.trimtime.app.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -22,10 +25,12 @@ public class CustomUserDetailsService implements UserDetailsService {
         if (user.isEmpty()) {
             throw new UsernameNotFoundException("User not found with email: " + email);
         }
-        return org.springframework.security.core.userdetails.User
-                .withUsername(user.get().getEmail())
-                .password(user.get().getPassword())
-                .roles("USER") // Adjust roles as needed
-                .build();
-    }
+         return new User(
+                userApp.get().getEmail(),
+                userApp.get().getPassword(),
+                userApp.get().getIsEnabled(), true, true, true,
+                userApp.get().getRoles().stream()
+                        .map(role -> new SimpleGrantedAuthority(role.getName()))
+                        .collect(Collectors.toSet())
+        );
 }
