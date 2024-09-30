@@ -1,4 +1,4 @@
-package com.barbershop.barbershopapp.domain;
+package com.trimtime.app.domain;
 
 import java.util.ArrayList;
 import java.util.List;
