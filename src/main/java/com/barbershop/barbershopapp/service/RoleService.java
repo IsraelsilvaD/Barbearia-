@@ -1,6 +1,6 @@
-package com.barbershop.barbershopapp.service;
+package com.trimtime.app.service;
 
-import com.barbershop.barbershopapp.domain.ProductType.Role;
+import com.trimtime.app.domain.ProductType.Role;
 
 public class RoleService {
 
