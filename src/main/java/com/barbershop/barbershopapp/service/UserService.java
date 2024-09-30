@@ -1,7 +1,9 @@
-package com.barbershop.barbershopapp.service;
+package com.trimtime.app.service;
 
-import com.barbershop.barbershopapp.domain.User;
-import com.barbershop.barbershopapp.repository.UserRepository;
+import com.trimtime.app.domain.Role;
+import com.trimtime.app.domain.User;
+import com.trimtime.app.repository.RolesRepository;
+import com.trimtime.app.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -12,9 +14,12 @@ import java.util.Optional;
 
 @Service
 public class UserService {
+    
     @Autowired
     private PasswordEncoder passwordEncoder;
-    @Autowired
+
+    private final RolesRepository rolesRepository;
+    
     private UserRepository userRepository;
 
     // Obter todos os usuários
@@ -30,6 +35,9 @@ public class UserService {
     // Criar um novo usuário
     public User createUser(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
+         Role customerRole = rolesRepository.findByName("CUSTOMER")
+                .orElseThrow(() -> new RuntimeException("Default role not found"));
+        user.getRoles().add(customerRole);
         return userRepository.save(user);
 
     }
