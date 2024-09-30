@@ -1,4 +1,4 @@
-package com.barbershop.barbershopapp.util;
+package com.trimtime.app.util;
 
 import org.bson.types.ObjectId;
 import org.springframework.core.convert.converter.Converter;
