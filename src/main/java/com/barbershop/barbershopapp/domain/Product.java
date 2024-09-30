@@ -1,4 +1,4 @@
-package com.barbershop.barbershopapp.domain;
+package com.trimtime.app.domain;
 
 import lombok.Data;
 import lombok.Getter;
