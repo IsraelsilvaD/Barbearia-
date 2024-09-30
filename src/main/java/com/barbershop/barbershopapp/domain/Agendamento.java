@@ -6,18 +6,20 @@ import java.time.LocalDateTime;
 
 public class Agendamento {
     private Long id;
-    private Long clienteId; // Novo campo para associar o cliente
-    private Long servicoId; // Novo campo para associar o serviço
+    private Long clienteId; // Associado ao cliente
+    private Long servicoId; // Associado ao serviço
+    private Long barbeiroId; // Associado ao barbeiro
     private String profissional; // Nome do profissional
     private LocalDate data;
     private LocalTime horario;
     private String status;
 
     // Construtor
-    public Agendamento(Long clienteId, String profissional, Long servicoId, LocalDate data, LocalTime horario) {
+    public Agendamento(Long clienteId, Long barbeiroId, String profissional, Long servicoId, LocalDate data, LocalTime horario) {
         this.clienteId = clienteId;
-        this.servicoId = servicoId;
+        this.barbeiroId = barbeiroId;
         this.profissional = profissional;
+        this.servicoId = servicoId;
         this.data = data;
         this.horario = horario;
         this.status = "Pendente"; // Status inicial do agendamento
@@ -46,6 +48,14 @@ public class Agendamento {
 
     public void setServicoId(Long servicoId) {
         this.servicoId = servicoId;
+    }
+
+    public Long getBarbeiroId() {
+        return barbeiroId;
+    }
+
+    public void setBarbeiroId(Long barbeiroId) {
+        this.barbeiroId = barbeiroId;
     }
 
     public String getProfissional() {
@@ -92,3 +102,4 @@ public class Agendamento {
         return LocalDateTime.of(data, horario);
     }
 }
+
