@@ -1,7 +1,7 @@
-package com.barbershop.barbershopapp.service;
+package com.trimtime.app.service;
 
-import com.barbershop.barbershopapp.domain.Agendamento;
-import com.barbershop.barbershopapp.repository.AgendamentoRepository;
+import com.trimtime.app.domain.Agendamento;
+import com.trimtime.app.repository.AgendamentoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
