@@ -1,6 +1,6 @@
-package com.barbershop.barbershopapp;
+package com.trimtime.app;
 
-import com.barbershop.barbershopapp.util.ObjectIdToLongConverter;
+import com.trimtime.app.util.ObjectIdToLongConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;
