@@ -1,8 +1,8 @@
-package com.barbershop.barbershopapp.service;
+package com.trimtime.app.service;
 
-import com.barbershop.barbershopapp.domain.RegisterRequest;
-import com.barbershop.barbershopapp.domain.User;
-import com.barbershop.barbershopapp.repository.UserRepository;
+import com.trimtime.app.domain.RegisterRequest;
+import com.trimtime.app.domain.User;
+import com.trimtime.app.repository.UserRepository;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
