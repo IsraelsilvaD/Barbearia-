@@ -1,4 +1,4 @@
-package com.barbershop.barbershopapp.service;
+package com.trimtime.app.service;
 
 import org.springframework.stereotype.Service;
 
