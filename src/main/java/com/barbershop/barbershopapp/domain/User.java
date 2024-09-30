@@ -1,10 +1,14 @@
-package com.barbershop.barbershopapp.domain;
+package com.trimtime.app.domain;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
 import javax.management.relation.Role;
 import java.util.Date;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Data
 @Entity
@@ -17,6 +21,7 @@ public class User {
     private String email;
     private String phone;
     private String password;
+    private Boolean isEnabled;
     private Boolean isBarber;
     private Role role;
     private String resetToken; // Campo para armazenar o token de recuperação de senha
@@ -26,6 +31,14 @@ public class User {
       CUSTOMER, // Cliente
         EMPLOYEE, // Colaborador
         ADMIM // Dono da Barbearia com acesso completo
+      
+          @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "user_roles",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
+    private Set<Role> roles = new HashSet<>();
     }
 
     private Date registrationDate = new Date();
