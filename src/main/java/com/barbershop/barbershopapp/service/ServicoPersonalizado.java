@@ -1,6 +1,6 @@
-package com.barbershop.barbershopapp.service;
+package com.trimtime.app.service;
 
-import com.barbershop.barbershopapp.domain.ProductType;
+import com.trimtime.app.domain.ProductType;
 import java.util.List;
 
 public class ServicoPersonalizado {
