@@ -1,10 +1,10 @@
-package com.barbershop.barbershopapp.api;
+package com.trimtime.app.api;
 
-import com.barbershop.barbershopapp.domain.ForgotPasswordRequest;
-import com.barbershop.barbershopapp.domain.RegisterRequest;
-import com.barbershop.barbershopapp.domain.ResetPasswordRequest;
-import com.barbershop.barbershopapp.domain.User;
-import com.barbershop.barbershopapp.service.AuthService;
+import com.trimtime.app.domain.ForgotPasswordRequest;
+import com.trimtime.app.domain.RegisterRequest;
+import com.trimtime.app.domain.ResetPasswordRequest;
+import com.trimtime.app.domain.User;
+import com.trimtime.app.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
